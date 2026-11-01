@@ -1,0 +1,8 @@
+include:
+  - package:flutter_lints/flutter.yaml
+  - ../analysis_options.yaml
+
+linter:
+  rules:
+    # An app, not a library: its classes are documented where it helps.
+    public_member_api_docs: false

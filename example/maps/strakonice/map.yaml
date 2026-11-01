@@ -1,0 +1,35 @@
+# Strakonice, the pack in assets/packs/strakonice, rebuilt from OpenStreetMap
+# and drawn in "Parchment" (OSM Bright, recoloured) with its own sprite beside
+# this file. From example/:
+#   dart run astronomican_tiles preview maps/strakonice   # build into .work and look; publishes nothing
+#   dart run astronomican_tiles build maps/strakonice     # ... and publish, once output is set
+# Paths are relative to this file.
+id: strakonice
+name: Strakonice
+# Installed apps recopy a bundled pack only when this goes up. The bundled pack
+# is v1 and the downloads demo serves v2 from assets/remote/strakonice, so
+# publishing a rebuild over assets/packs/strakonice means going to 3.
+version: 1
+attribution: © OpenMapTiles © OpenStreetMap contributors
+
+# Geofabrik's South Bohemian Region (97 MB); "czech-republic" is the whole
+# country (950 MB). The path form "europe/czech-republic/jihocesky" works too.
+area: jihocesky
+bounds: [13.874796, 49.243512, 13.930929, 49.274931]   # west, south, east, north
+minZoom: 0
+maxZoom: 14
+
+style: style.json
+glyphs:
+  ranges: [0-255, 256-511]
+  sources:
+    # Parchment uses Noto Sans Medium, which the OpenMapTiles fonts lack;
+    # Protomaps hosts it.
+    - https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf
+
+planetiler:
+  languages: [cs, en, de]
+
+# Off on purpose: the demo never overwrites the bundled pack. Set it, bump the
+# version, and `build` publishes there.
+# output: ../../assets/packs/strakonice

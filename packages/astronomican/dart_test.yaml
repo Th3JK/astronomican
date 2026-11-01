@@ -1,0 +1,4 @@
+tags:
+  # Resolves a scratch app to prove no MapLibre leaks into this package's
+  # graph. Slow (a pub get); exclude with --exclude-tags isolation.
+  isolation:

@@ -1,0 +1,25 @@
+name: astronomican_pack_format
+description: >-
+  The astronomican map pack format: the pack.json manifest, the pack:// style
+  conventions, glyph ranges and the pack errors. Pure Dart, shared by the apps
+  that install packs and the tools that build them.
+version: 0.1.0
+repository: https://github.com/sramekj/astronomican
+issue_tracker: https://github.com/sramekj/astronomican/issues
+
+topics:
+  - maps
+  - offline-maps
+
+environment:
+  # The floor of the rest of the astronomican family.
+  sdk: ^3.9.0
+
+dependencies:
+  # Only for @immutable. No Flutter and no dart:ui: the command-line tools
+  # build packs with a plain Dart SDK.
+  meta: ^1.16.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.0

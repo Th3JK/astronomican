@@ -1,0 +1,32 @@
+# Shared by every package in this repository. Deliberately no `include:` of a
+# lint package here: each package includes its own (flutter_lints or lints)
+# and then this file, so it resolves from any of them.
+analyzer:
+  exclude:
+    - build/**
+    - "**/build/**"
+    - "**/.work/**"
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+  language:
+    strict-casts: true
+    strict-raw-types: true
+
+linter:
+  rules:
+    # Every public member is documented: these are published packages, and it
+    # is also the pub.dev score.
+    - public_member_api_docs
+    - prefer_final_locals
+    - require_trailing_commas
+    - always_declare_return_types
+    - avoid_positional_boolean_parameters
+    - unawaited_futures
+    # Downloads and previews hand out streams and processes; a subscription or
+    # controller left open is a download that never stops.
+    - cancel_subscriptions
+    - close_sinks

@@ -1,0 +1,48 @@
+name: astronomican_example
+description: "Every way astronomican draws a map, one page each."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  # The image-map pages and the demo data need only the core; the geo pages
+  # import astronomican_maplibre, which re-exports it.
+  astronomican:
+    path: ../packages/astronomican
+  astronomican_maplibre:
+    path: ../packages/astronomican_maplibre
+  # The device's GPS and compass, for the location button when the demo is
+  # not simulating a walk.
+  astronomican_location:
+    path: ../packages/astronomican_location
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  # dart run astronomican_tiles …: builds and previews maps/strakonice.
+  astronomican_tiles:
+    path: ../packages/astronomican_tiles
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    # The Strakonice pack, bundled at version 1. Asset folders are not
+    # recursive, so each glyph family is listed on its own line —
+    # `dart run astronomican_tiles manifest` prints these lines.
+    - assets/packs/strakonice/
+    - assets/packs/strakonice/fonts/Noto Sans Italic/
+    - assets/packs/strakonice/fonts/Noto Sans Medium/
+    - assets/packs/strakonice/fonts/Noto Sans Regular/
+    # What the demo pack server offers as version 2: a new manifest and a
+    # recoloured style. Every other file is the same as in version 1, which
+    # the download reuses instead of fetching.
+    - assets/remote/strakonice/
+    # Floor plans of the Rýmařov museum and the Hedva textile works, and the
+    # marker artwork from both apps.
+    - assets/floors/
+    - assets/markers/

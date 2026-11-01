@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "id": "strakonice",
+  "version": 1,
+  "name": "Strakonice",
+  "style": "style.json",
+  "bounds": [
+    13.874796,
+    49.243512,
+    13.930929,
+    49.274931
+  ],
+  "maxZoom": 14,
+  "attribution": "© OpenStreetMap contributors",
+  "files": [
+    {
+      "path": "fonts/Noto Sans Italic/0-255.pbf",
+      "size": 79344,
+      "sha256": "43edfca91c285ba1226f09d5e74d68e1473a088c517f02a5212ff6ccb10037dc"
+    },
+    {
+      "path": "fonts/Noto Sans Italic/256-511.pbf",
+      "size": 132976,
+      "sha256": "a6f9f6574c86a4a28aba630ca1017857ceadd2370ed32a1293c35f819ab9bd60"
+    },
+    {
+      "path": "fonts/Noto Sans Medium/0-255.pbf",
+      "size": 77628,
+      "sha256": "ba2f0118dd024e3041b158e5f9eb49bc0a658019f53f458e9f5c0b8efcd79b91"
+    },
+    {
+      "path": "fonts/Noto Sans Medium/256-511.pbf",
+      "size": 129635,
+      "sha256": "d5e801a1a5b1d409d3298c3a1e1ca76328e2314a751078833a618620e8e66e4d"
+    },
+    {
+      "path": "fonts/Noto Sans Regular/0-255.pbf",
+      "size": 76044,
+      "sha256": "62c6d49b15fa836eb6aa45e259c7ca6762f44b011b09e47776efbe4a6db1b397"
+    },
+    {
+      "path": "fonts/Noto Sans Regular/256-511.pbf",
+      "size": 127726,
+      "sha256": "2eca7561f9f566bcacfda5dd04fb5880baec1328ec0f5484678289a13994de8a"
+    },
+    {
+      "path": "sprite.json",
+      "size": 11345,
+      "sha256": "ab3545f5698a405f1958d6672e64ed25cf0c46d1c0c1bdf63e6e3099cf640f18"
+    },
+    {
+      "path": "sprite.png",
+      "size": 17419,
+      "sha256": "abfc4038c6987790294ec73db88bf240980738da3f6df5e21b577ebd0f63e349"
+    },
+    {
+      "path": "sprite@2x.json",
+      "size": 11404,
+      "sha256": "9d0c0c056d199288f9c0bf20145e40e167990c6813934bc53ae610e55b69da2b"
+    },
+    {
+      "path": "sprite@2x.png",
+      "size": 44711,
+      "sha256": "b3aa0deb688c3cba0ca74679727168248c40a6f30051ee8005ea1036097cb925"
+    },
+    {
+      "path": "strakonice.mbtiles",
+      "size": 1507328,
+      "sha256": "31e67cc4d96e54bcb9507e72bd578294c8fabf32a8fc1fb0212688d980828abb"
+    },
+    {
+      "path": "style.json",
+      "size": 112304,
+      "sha256": "9334a8df346ec1228be1955cf1c9008e87f0ef512b89b359d275939e5ce0dfd1"
+    }
+  ]
+}

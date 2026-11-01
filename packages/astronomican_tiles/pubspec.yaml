@@ -1,0 +1,49 @@
+name: astronomican_tiles
+description: >-
+  Builds astronomican map packs from OpenStreetMap: OpenMapTiles vector tiles
+  with Planetiler, any OpenMapTiles style made fully offline (sprite and
+  composited glyphs), pack.json, and a live preview in TileServer GL and
+  Maputnik, all through Docker Compose.
+version: 0.1.0
+# Linked to its siblings by path while the family is developed together; swap
+# the path dependencies for versions and drop this line to publish.
+publish_to: none
+repository: https://github.com/sramekj/astronomican
+issue_tracker: https://github.com/sramekj/astronomican/issues
+
+topics:
+  - maps
+  - openmaptiles
+  - offline-maps
+  - cli
+
+environment:
+  # Pure Dart: runs with a plain Dart SDK, no Flutter needed.
+  sdk: ^3.9.0
+
+executables:
+  astronomican_tiles:
+  # The tool this replaces, kept so old scripts keep working.
+  pack_manifest:
+
+dependencies:
+  # The OpenMapTiles fonts release and the openmaptiles repository come as
+  # zips; pure Dart, and reads single entries without unpacking the rest.
+  archive: ^4.0.0
+  # The command line: a CommandRunner of subcommands.
+  args: ^2.6.0
+  # pack.json and the shared conventions the apps read.
+  astronomican_pack_format:
+    path: ../astronomican_pack_format
+  # SHA-256 for pack.json and for checking downloads.
+  crypto: ^3.0.6
+  meta: ^1.16.0
+  path: ^1.9.1
+  # map.yaml, with line numbers for its errors.
+  yaml: ^3.1.2
+  # `--bump` and `style --eject` rewrite map.yaml keeping its comments.
+  yaml_edit: ^2.2.1
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.0

@@ -1,0 +1,55 @@
+name: astronomican
+description: >-
+  Maps for Flutter tour apps without a street map: pictures used as the map,
+  building floor plans with a level selector, constant-size markers, and
+  versioned offline map packs. MapLibre lives in astronomican_maplibre.
+version: 0.3.0
+# Linked to its siblings by path while the family is developed together; swap
+# the path dependencies for versions and drop this line to publish.
+publish_to: none
+repository: https://github.com/sramekj/astronomican
+issue_tracker: https://github.com/sramekj/astronomican/issues
+
+topics:
+  - maps
+  - offline-maps
+  - indoor
+  - floor-plan
+
+environment:
+  # The same floor as strakonice and rymarov, the first two apps built on this,
+  # so it drops into both without moving their toolchains. Rules out dot
+  # shorthands (3.10) and primary constructors.
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  # The pack.json format and pack:// conventions, shared with the tools that
+  # build packs. By path while the family moves together.
+  astronomican_pack_format:
+    path: ../astronomican_pack_format
+  # Streaming SHA-256 for pack downloads: verifies what arrived, and lets an
+  # update reuse the files it shares with the installed version instead of
+  # fetching them again.
+  crypto: ^3.0.6
+  flutter:
+    sdk: flutter
+  # For @immutable and @internal.
+  meta: ^1.16.0
+  # Joins and containment checks for paths that come out of pack manifests.
+  path: ^1.9.1
+  # Only for MapPackManager.defaultRoot(); the manager itself takes any
+  # directory, which is what the tests hand it.
+  path_provider: ^2.1.5
+  # No maplibre_gl, on purpose: an app that only draws pictures should not
+  # carry the native map SDK. GeoMap is in astronomican_maplibre.
+
+dev_dependencies:
+  # Drives the heading's timers in tests without waiting on a clock.
+  fake_async: ^1.3.1
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+# No assets: the package draws its default markers in code, so a consuming
+# app never pays for artwork it does not use.
